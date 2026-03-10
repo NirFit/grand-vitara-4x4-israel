@@ -237,10 +237,11 @@ body.content-page { background: var(--black); }
 }
 
 .hero-bg-logo {
-    background-size: contain;
+    background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15;
+    opacity: 0.18;
+    filter: grayscale(100%) brightness(0.5);
 }
 
 @keyframes kenburns {
@@ -252,16 +253,16 @@ body.content-page { background: var(--black); }
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, 
-        rgba(10, 10, 10, 0.7) 0%, 
-        rgba(10, 10, 10, 0.85) 50%,
-        rgba(10, 10, 10, 0.95) 100%);
+        rgba(10, 10, 10, 0.5) 0%, 
+        rgba(10, 10, 10, 0.75) 50%,
+        rgba(10, 10, 10, 0.9) 100%);
 }
 
 .hero-overlay::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(204, 0, 0, 0.1) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(204, 0, 0, 0.06) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -298,18 +299,12 @@ body.content-page { background: var(--black); }
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--white);
-    background: var(--red);
-    border: 2px solid var(--red-bright);
-    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-md);
     margin-bottom: var(--space-lg);
-    box-shadow: var(--shadow-red-glow);
     letter-spacing: 0.05em;
-    animation: hero-badge-glow 2.5s ease-in-out infinite;
-}
-
-@keyframes hero-badge-glow {
-    0%, 100% { box-shadow: 0 0 20px var(--red-glow-alpha); }
-    50% { box-shadow: 0 0 35px rgba(230, 57, 70, 0.5); }
+    backdrop-filter: blur(8px);
 }
 
 .hero-title {
@@ -337,13 +332,13 @@ body.content-page { background: var(--black); }
 }
 
 .hero-title.glitch::before {
-    color: var(--red-bright);
+    color: rgba(255, 255, 255, 0.9);
     animation: glitch-x 4s infinite linear alternate-reverse;
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
 }
 
 .hero-title.glitch::after {
-    color: var(--red);
+    color: rgba(255, 255, 255, 0.85);
     animation: glitch-x 3.5s infinite linear alternate-reverse;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
 }
@@ -373,19 +368,19 @@ body.content-page { background: var(--black); }
     font-size: 1.1rem;
     font-weight: 600;
     color: white;
-    background: var(--red);
-    border: 2px solid var(--red-bright);
+    background: linear-gradient(180deg, var(--red-bright) 0%, var(--red) 50%, var(--red-dark) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-md);
     text-decoration: none;
     cursor: pointer;
     transition: all var(--transition);
-    box-shadow: 0 4px 20px var(--red-glow-alpha);
+    box-shadow: 0 4px 20px var(--red-glow-alpha), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 .btn-hero:hover {
     transform: translateY(-3px);
-    background: var(--red-bright);
-    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.5);
+    background: linear-gradient(180deg, #ff5555 0%, var(--red-bright) 50%, var(--red) 100%);
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
 }
 
 .btn-hero-outline {
