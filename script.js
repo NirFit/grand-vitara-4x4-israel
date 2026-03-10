@@ -1,5 +1,5 @@
 /**
- * Suzuki Grand Vitara 4x4 Israel Team
+ * Suzuki Grand Vitara 4x4 Israel
  * Premium Website - JavaScript
  */
 

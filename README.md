@@ -1,4 +1,4 @@
-# Suzuki Grand Vitara 4x4 Israel Team - אתר המועדון
+# Suzuki Grand Vitara 4x4 Israel - אתר המועדון
 
 אתר מקצועי למועדון סוזוקי גרנד ויטרה 4x4 ישראל.
 
