@@ -7,11 +7,16 @@
     <title>Suzuki Grand Vitara 4x4 Israel Team | בית</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <a href="#main" class="skip-link">דלג לתוכן הראשי</a>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" role="progressbar" aria-label="התקדמות גלילה" aria-valuemin="0" aria-valuemax="100">
+        <div class="scroll-progress-bar"></div>
+    </div>
 
     <header class="header">
         <div class="header-inner">
@@ -23,10 +28,13 @@
                     <div class="hero-image-fallback" aria-hidden="true">🚗</div>
                 </div>
                 <div class="logo-content">
-                    <span class="page-icon" aria-hidden="true">🚗</span>
+                    <span class="club-badge">מועדון רשמי</span>
                     <h1 class="site-title">Suzuki Grand Vitara 4x4 Israel Team</h1>
+                    <p class="site-tagline">קהילת בעלי הגרנד ויטרה בישראל</p>
                     <nav class="header-nav">
                         <a href="#main" class="nav-link active">בית</a>
+                        <a href="#info" class="nav-link">מאגר מידע</a>
+                        <a href="#videos" class="nav-link">סרטונים</a>
                     </nav>
                 </div>
             </div>
@@ -35,10 +43,16 @@
 
     <main id="main" class="main-content">
         <section class="hero-section">
+            <div class="hero-bg">
+                <div class="hero-blob hero-blob-1"></div>
+                <div class="hero-blob hero-blob-2"></div>
+                <div class="hero-blob hero-blob-3"></div>
+            </div>
             <div class="container">
-                <div class="hero-card">
+                <div class="hero-card animate-on-scroll">
+                    <span class="hero-badge">📖 מדריך מקיף</span>
                     <h2 class="section-title">חוברת מכונאים אינטראקטיבית</h2>
-                    <p class="hero-description">גישה לחוברת המקיפה עם כל המידע הנדרש</p>
+                    <p class="hero-description">גישה לחוברת המקיפה עם כל המידע הנדרש – תחזוקה, חלפים, מדריכים ועוד</p>
                     <a href="https://notebooklm.google.com/notebook/9696a696-65f0-4db1-91de-d671880ca7b4" 
                        target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                         <span class="btn-icon">📖</span>
@@ -48,10 +62,10 @@
             </div>
         </section>
 
-        <section class="walkthrough-section">
+        <section class="walkthrough-section animate-on-scroll">
             <div class="container">
-                <h2 class="section-heading">איך לנווט בחוברת</h2>
-                <div class="video-wrapper">
+                <h2 class="section-heading animate-on-scroll">איך לנווט בחוברת</h2>
+                <div class="video-wrapper animate-on-scroll">
                     <div class="video-container">
                         <iframe 
                             src="https://www.youtube.com/embed/i8rVEFym_9o" 
@@ -63,7 +77,7 @@
                     </div>
                     <p class="video-caption">Grand Vitara 4x4 Israel Team - סרטון הדרכה על ניווט בחוברת המועדון | Max Chernin</p>
                 </div>
-                <div class="callout-box">
+                <div class="callout-box animate-on-scroll">
                     <span class="callout-icon" aria-hidden="true">💡</span>
                     <p class="callout-text">
                         מאגר מידע דינמי ומרכזי המאגד את כל הידע הנדרש לבעלי רכב סוזוקי גרנד ויטרה. 
@@ -74,59 +88,59 @@
             </div>
         </section>
 
-        <section class="links-section">
+        <section id="info" class="links-section">
             <div class="container">
-                <h2 class="section-heading">מאגר המידע</h2>
+                <h2 class="section-heading animate-on-scroll">מאגר המידע</h2>
                 <div class="links-grid">
-                    <a href="https://understood-animal-519.notion.site/16ebd159c34d80ed88a4ebf4e1d85ec7?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16ebd159c34d80ed88a4ebf4e1d85ec7?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🧰</span>
                         <span class="link-text">לוח טיפולים ותחזוקה</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80dfa04cf50eaa9e09c2?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80dfa04cf50eaa9e09c2?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🛢️</span>
                         <span class="link-text">טבלת שמנים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8053946be470ccd4e3aa?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8053946be470ccd4e3aa?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">📊</span>
                         <span class="link-text">שרטוטים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8044b13be82a7e384039?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8044b13be82a7e384039?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🔢</span>
                         <span class="link-text">מקטים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8056a974c74009062f25?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8056a974c74009062f25?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">💡</span>
                         <span class="link-text">נורות לרכב</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/17ebd159c34d80a6875de8f799da8435?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/17ebd159c34d80a6875de8f799da8435?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">📡</span>
                         <span class="link-text">טבלת תדרים למכשיר קשר</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/DIY-16dbd159c34d80209ee0e5b4e58e34e1?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/DIY-16dbd159c34d80209ee0e5b4e58e34e1?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">📺</span>
                         <span class="link-text">עשה זאת בעצמך - טיפולים לרכב DIY</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80c4b8cfc0c454bee506?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80c4b8cfc0c454bee506?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🛠️</span>
                         <span class="link-text">רשימת אתרים לחלפים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80948490fcd0ebdb9ee5?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80948490fcd0ebdb9ee5?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🔧</span>
                         <span class="link-text">אישורי חלפים מחו"ל</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d807bba78dbe87afdc50e?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d807bba78dbe87afdc50e?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">📦</span>
                         <span class="link-text">רכש מומלץ של חלפים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/0a9ee083ab474f6b9abbe6a62dd315c4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/0a9ee083ab474f6b9abbe6a62dd315c4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">⭐</span>
                         <span class="link-text">בעלי עסקים מומלצים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/262bd159c34d809b961ae67727dc0d5c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/262bd159c34d809b961ae67727dc0d5c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">💼</span>
                         <span class="link-text">עסקים של חברי המועדון</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8095ad10c3ffaea26eb4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8095ad10c3ffaea26eb4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🏷️</span>
                         <span class="link-text">קודי קופון</span>
                     </a>
@@ -136,7 +150,7 @@
 
         <section class="regulations-section">
             <div class="container">
-                <h2 class="section-heading">תקנון המועדון</h2>
+                <h2 class="section-heading animate-on-scroll">תקנון המועדון</h2>
                 <a href="https://understood-animal-519.notion.site/16dbd159c34d80a580dde090ee87c899?pvs=25" 
                    target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                     <span class="btn-icon">📖</span>
@@ -145,11 +159,11 @@
             </div>
         </section>
 
-        <section class="videos-section">
+        <section id="videos" class="videos-section">
             <div class="container">
-                <h2 class="section-heading">סרטונים מומלצים</h2>
+                <h2 class="section-heading animate-on-scroll">סרטונים מומלצים</h2>
                 <div class="videos-grid">
-                    <div class="video-card">
+                    <div class="video-card animate-on-scroll">
                         <div class="video-container">
                             <iframe 
                                 src="https://www.youtube.com/embed/03iLQhNhn50" 
@@ -167,21 +181,21 @@
 
         <section class="additional-links">
             <div class="container">
-                <h2 class="section-heading">קישורים נוספים</h2>
+                <h2 class="section-heading animate-on-scroll">קישורים נוספים</h2>
                 <div class="links-grid compact">
-                    <a href="https://understood-animal-519.notion.site/16dbd159c34d8094a9decd301f8e8d3c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/16dbd159c34d8094a9decd301f8e8d3c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🗺️</span>
                         <span class="link-text">טיולים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/3-1adbd159c34d8030aadbf107a3d69651?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/3-1adbd159c34d8030aadbf107a3d69651?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">⚙️</span>
                         <span class="link-text">בורר טרנספר - גרנד ויטרה דור 3</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/2c9bd159c34d8066a09ec75c4ecc23b8?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/2c9bd159c34d8066a09ec75c4ecc23b8?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">🛞</span>
                         <span class="link-text">צמיגים</span>
                     </a>
-                    <a href="https://understood-animal-519.notion.site/2eebd159c34d80bb85ebfd0bf7c494ec?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card">
+                    <a href="https://understood-animal-519.notion.site/2eebd159c34d80bb85ebfd0bf7c494ec?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card animate-item">
                         <span class="link-icon">📄</span>
                         <span class="link-text">עמוד נוסף</span>
                     </a>
@@ -190,9 +204,20 @@
         </section>
     </main>
 
+    <button type="button" class="back-to-top" aria-label="חזרה למעלה" title="חזרה למעלה">
+        <span class="back-to-top-icon">↑</span>
+    </button>
+
     <footer class="footer">
         <div class="container">
-            <p class="footer-text">Suzuki Grand Vitara 4x4 Israel Team © 2025</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🚗</span>
+                    <strong>Suzuki Grand Vitara 4x4 Israel Team</strong>
+                </div>
+                <p class="footer-text">קהילת בעלי הגרנד ויטרה בישראל • מאגר מידע ותמיכה הדדית</p>
+                <p class="footer-copy">© 2025</p>
+            </div>
         </div>
     </footer>
 
