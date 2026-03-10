@@ -33,6 +33,7 @@
                     <p class="site-tagline">קהילת בעלי הגרנד ויטרה בישראל</p>
                     <nav class="header-nav">
                         <a href="#main" class="nav-link active">בית</a>
+                        <a href="#search" class="nav-link">חיפוש AI</a>
                         <a href="#info" class="nav-link">מאגר מידע</a>
                         <a href="#videos" class="nav-link">סרטונים</a>
                     </nav>
@@ -52,7 +53,7 @@
                 <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">חוברת מכונאים אינטראקטיבית</h1>
                 <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">גישה לחוברת המקיפה – תחזוקה, חלפים, מדריכים ועוד</p>
                 <a href="https://notebooklm.google.com/notebook/9696a696-65f0-4db1-91de-d671880ca7b4" 
-                   target="_blank" rel="noopener noreferrer" class="btn btn-hero" data-aos="fade-up" data-aos-delay="300">
+                   target="_blank" rel="noopener noreferrer" class="btn btn-hero" data-search="חוברת,מדריך,מכונאים,מידע,כללי" data-aos="fade-up" data-aos-delay="300">
                     <span class="btn-icon">📖</span>
                     פתח את החוברת
                 </a>
@@ -68,6 +69,36 @@
                 <div class="glass-card hero-card" data-aos="fade-up">
                     <h2 class="section-title">מאגר המידע המלא</h2>
                     <p class="hero-description">כל מה שצריך לדעת על הגרנד ויטרה – במקום אחד</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Search -->
+        <section id="search" class="section ai-search-section">
+            <div class="container">
+                <div class="ai-search-card glass-card" data-aos="fade-up">
+                    <div class="ai-search-header">
+                        <span class="ai-robot-icon" aria-hidden="true">🤖</span>
+                        <div class="ai-search-greeting">
+                            <p class="ai-greeting-text">שלום, אני הרובוט של סוזוקי גראנד ויטרה, איך אפשר לעזור? ספר לי מה שאתה מחפש ואני אמצא לך</p>
+                        </div>
+                    </div>
+                    <div class="ai-search-form">
+                        <label for="ai-search-input" class="visually-hidden">חפש במאגר המידע</label>
+                        <div class="search-input-wrapper">
+                            <input type="search" id="ai-search-input" class="ai-search-input" 
+                                   placeholder="למשל: תחזוקה, שמן, חלפים, נורות, טיולים..." 
+                                   autocomplete="off" aria-describedby="search-results-hint">
+                            <button type="button" class="ai-search-btn" aria-label="חפש">
+                                <span class="search-btn-icon">🔍</span>
+                            </button>
+                        </div>
+                        <p id="search-results-hint" class="ai-search-hint">הקלד מילת חיפוש ואמצא לך את הקישורים הרלוונטיים</p>
+                    </div>
+                    <div id="ai-search-results" class="ai-search-results" aria-live="polite" aria-atomic="true"></div>
+                    <div class="ai-search-notebooklm">
+                        <p>רוצה תשובות מעמיקות מהחוברת? <a href="https://notebooklm.google.com/notebook/9696a696-65f0-4db1-91de-d671880ca7b4" target="_blank" rel="noopener noreferrer">שאל את החוברת האינטראקטיבית</a></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -97,20 +128,20 @@
         <section id="info" class="links-section">
             <div class="container">
                 <h2 class="section-heading" data-aos="fade-up">מאגר המידע</h2>
-                <div class="links-grid">
-                    <a href="https://understood-animal-519.notion.site/16ebd159c34d80ed88a4ebf4e1d85ec7?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🧰</span><span class="link-text">לוח טיפולים ותחזוקה</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80dfa04cf50eaa9e09c2?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">🛢️</span><span class="link-text">טבלת שמנים</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8053946be470ccd4e3aa?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">📊</span><span class="link-text">שרטוטים</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8044b13be82a7e384039?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">🔢</span><span class="link-text">מקטים</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8056a974c74009062f25?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">💡</span><span class="link-text">נורות לרכב</span></a>
-                    <a href="https://understood-animal-519.notion.site/17ebd159c34d80a6875de8f799da8435?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">📡</span><span class="link-text">טבלת תדרים למכשיר קשר</span></a>
-                    <a href="https://understood-animal-519.notion.site/DIY-16dbd159c34d80209ee0e5b4e58e34e1?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">📺</span><span class="link-text">עשה זאת בעצמך - DIY</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80c4b8cfc0c454bee506?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">🛠️</span><span class="link-text">רשימת אתרים לחלפים</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80948490fcd0ebdb9ee5?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🔧</span><span class="link-text">אישורי חלפים מחו"ל</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d807bba78dbe87afdc50e?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">📦</span><span class="link-text">רכש מומלץ של חלפים</span></a>
-                    <a href="https://understood-animal-519.notion.site/0a9ee083ab474f6b9abbe6a62dd315c4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">⭐</span><span class="link-text">בעלי עסקים מומלצים</span></a>
-                    <a href="https://understood-animal-519.notion.site/262bd159c34d809b961ae67727dc0d5c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">💼</span><span class="link-text">עסקים של חברי המועדון</span></a>
-                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8095ad10c3ffaea26eb4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🏷️</span><span class="link-text">קודי קופון</span></a>
+                <div class="links-grid" id="info-links-grid">
+                    <a href="https://understood-animal-519.notion.site/16ebd159c34d80ed88a4ebf4e1d85ec7?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="טיפולים,תחזוקה,שמן,מערכת,בלמים" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🧰</span><span class="link-text">לוח טיפולים ותחזוקה</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80dfa04cf50eaa9e09c2?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="שמן,שמנים,מנוע,תיבת הילוכים" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">🛢️</span><span class="link-text">טבלת שמנים</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8053946be470ccd4e3aa?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="שרטוט,שרטוטים,דיאגרמה" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">📊</span><span class="link-text">שרטוטים</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8044b13be82a7e384039?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="מקט,מקטים,מספר חלק,חלף" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">🔢</span><span class="link-text">מקטים</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8056a974c74009062f25?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="נורה,נורות,תאורה,פנס" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">💡</span><span class="link-text">נורות לרכב</span></a>
+                    <a href="https://understood-animal-519.notion.site/17ebd159c34d80a6875de8f799da8435?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="קשר,מכשיר קשר,תדרים,רדיו" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">📡</span><span class="link-text">טבלת תדרים למכשיר קשר</span></a>
+                    <a href="https://understood-animal-519.notion.site/DIY-16dbd159c34d80209ee0e5b4e58e34e1?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="DIY,עשה בעצמך,מדריך,התקנה" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">📺</span><span class="link-text">עשה זאת בעצמך - DIY</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80c4b8cfc0c454bee506?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="חלפים,אתרים,קנייה,רכש" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">🛠️</span><span class="link-text">רשימת אתרים לחלפים</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d80948490fcd0ebdb9ee5?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="אישור,חו''ל,יבוא,מכס" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🔧</span><span class="link-text">אישורי חלפים מחו"ל</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d807bba78dbe87afdc50e?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="חלפים,רכש,קנייה,מומלץ" data-aos="fade-up" data-aos-delay="50"><span class="link-icon">📦</span><span class="link-text">רכש מומלץ של חלפים</span></a>
+                    <a href="https://understood-animal-519.notion.site/0a9ee083ab474f6b9abbe6a62dd315c4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="עסק,מומלץ,מכונאי,טכנאי,שירות" data-aos="fade-up" data-aos-delay="100"><span class="link-icon">⭐</span><span class="link-text">בעלי עסקים מומלצים</span></a>
+                    <a href="https://understood-animal-519.notion.site/262bd159c34d809b961ae67727dc0d5c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="עסק,חברי מועדון,קהילה" data-aos="fade-up" data-aos-delay="150"><span class="link-icon">💼</span><span class="link-text">עסקים של חברי המועדון</span></a>
+                    <a href="https://understood-animal-519.notion.site/16cbd159c34d8095ad10c3ffaea26eb4?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="קופון,הנחה,מבצע" data-aos="fade-up" data-aos-delay="0"><span class="link-icon">🏷️</span><span class="link-text">קודי קופון</span></a>
                 </div>
             </div>
         </section>
@@ -119,7 +150,7 @@
             <div class="container">
                 <h2 class="section-heading" data-aos="fade-up">תקנון המועדון</h2>
                 <a href="https://understood-animal-519.notion.site/16dbd159c34d80a580dde090ee87c899?pvs=25" 
-                   target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-aos="fade-up">
+                   target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-search="תקנון,חוקים,מועדון,כללים" data-aos="fade-up">
                     <span class="btn-icon">📖</span>תקנון המועדון
                 </a>
             </div>
@@ -145,11 +176,11 @@
         <section class="additional-links">
             <div class="container">
                 <h2 class="section-heading" data-aos="fade-up">קישורים נוספים</h2>
-                <div class="links-grid compact">
-                    <a href="https://understood-animal-519.notion.site/16dbd159c34d8094a9decd301f8e8d3c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up"><span class="link-icon">🗺️</span><span class="link-text">טיולים</span></a>
-                    <a href="https://understood-animal-519.notion.site/3-1adbd159c34d8030aadbf107a3d69651?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up"><span class="link-icon">⚙️</span><span class="link-text">בורר טרנספר דור 3</span></a>
-                    <a href="https://understood-animal-519.notion.site/2c9bd159c34d8066a09ec75c4ecc23b8?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up"><span class="link-icon">🛞</span><span class="link-text">צמיגים</span></a>
-                    <a href="https://understood-animal-519.notion.site/2eebd159c34d80bb85ebfd0bf7c494ec?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-aos="fade-up"><span class="link-icon">📄</span><span class="link-text">עמוד נוסף</span></a>
+                <div class="links-grid compact" id="additional-links-grid">
+                    <a href="https://understood-animal-519.notion.site/16dbd159c34d8094a9decd301f8e8d3c?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="טיול,טיולים,מסלול,שטח" data-aos="fade-up"><span class="link-icon">🗺️</span><span class="link-text">טיולים</span></a>
+                    <a href="https://understood-animal-519.notion.site/3-1adbd159c34d8030aadbf107a3d69651?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="טרנספר,בורר,דיפרנציאל,4x4" data-aos="fade-up"><span class="link-icon">⚙️</span><span class="link-text">בורר טרנספר דור 3</span></a>
+                    <a href="https://understood-animal-519.notion.site/2c9bd159c34d8066a09ec75c4ecc23b8?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="צמיג,צמיגים,גלגל" data-aos="fade-up"><span class="link-icon">🛞</span><span class="link-text">צמיגים</span></a>
+                    <a href="https://understood-animal-519.notion.site/2eebd159c34d80bb85ebfd0bf7c494ec?pvs=25" target="_blank" rel="noopener noreferrer" class="link-card" data-search="עמוד,מידע" data-aos="fade-up"><span class="link-icon">📄</span><span class="link-text">עמוד נוסף</span></a>
                 </div>
             </div>
         </section>

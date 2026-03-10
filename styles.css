@@ -820,6 +820,8 @@ body::before {
     .links-grid { grid-template-columns: 1fr; }
     .videos-grid { grid-template-columns: 1fr; }
     .back-to-top { bottom: var(--space-md); right: var(--space-md); width: 46px; height: 46px; }
+    .ai-search-card { padding: var(--space-lg); }
+    .ai-search-results.has-results { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
