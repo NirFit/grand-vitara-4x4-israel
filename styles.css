@@ -54,9 +54,23 @@ body {
     line-height: 1.6;
     color: var(--color-text);
     background: var(--color-surface-alt);
+    background-image: url('logo.pdf.png');
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     direction: rtl;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(248, 250, 252, 0.92);
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* ========== SCROLL PROGRESS ========== */
@@ -212,6 +226,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+.hero-bg-logo {
+    background-size: cover;
+    background-position: center;
 }
 
 @keyframes kenburns {
