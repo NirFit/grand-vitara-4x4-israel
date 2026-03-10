@@ -97,6 +97,7 @@ body::before {
 }
 
 /* ========== Scroll Progress Bar ========== */
+/* direction: rtl so bar grows from right (start) in RTL layout */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -105,6 +106,7 @@ body::before {
     height: 4px;
     background: rgba(30, 41, 59, 0.06);
     z-index: 9998;
+    direction: rtl;
 }
 
 .scroll-progress-bar {
@@ -520,17 +522,6 @@ body::before {
 
 .hero-badge {
     display: inline-block;
-    padding: 0.35rem 0.85rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    background: rgba(69, 123, 157, 0.1);
-    border-radius: var(--radius-full);
-    margin-bottom: var(--space-md);
-}
-
-.hero-badge {
-    display: inline-block;
     font-size: 0.85rem;
     padding: var(--space-sm) var(--space-md);
     background: rgba(69, 123, 157, 0.1);
@@ -805,11 +796,12 @@ body::before {
     transform: translateY(0);
 }
 
-/* Back to Top */
+/* Back to Top - RTL: positioned on right (start) side */
 .back-to-top {
     position: fixed;
     bottom: var(--space-xl);
-    left: var(--space-xl);
+    right: var(--space-xl);
+    left: auto;
     width: 48px;
     height: 48px;
     display: flex;
@@ -857,6 +849,7 @@ body::before {
 .footer-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-sm);
 }
 
@@ -873,31 +866,9 @@ body::before {
     font-size: 1.5rem;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.footer-logo {
-    font-size: 1.5rem;
-}
-
 .footer-text {
     color: var(--color-text-muted);
     font-size: 0.9rem;
-}
-
-.footer-copy {
-    color: var(--color-text-soft);
-    font-size: 0.8rem;
 }
 
 .footer-copy {
@@ -925,7 +896,15 @@ body::before {
     }
     
     .videos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    
+    .back-to-top {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
     }
 }
 

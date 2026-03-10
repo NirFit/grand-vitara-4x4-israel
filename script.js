@@ -28,13 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll progress bar
     const scrollProgress = document.querySelector('.scroll-progress-bar');
+    const scrollProgressContainer = document.querySelector('.scroll-progress');
     if (scrollProgress) {
-        window.addEventListener('scroll', () => {
+        const updateProgress = () => {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            const percent = scrollHeight > 0 ? Math.round((scrollTop / scrollHeight) * 100) : 0;
             scrollProgress.style.width = percent + '%';
-        });
+            if (scrollProgressContainer) scrollProgressContainer.setAttribute('aria-valuenow', percent);
+        };
+        window.addEventListener('scroll', updateProgress);
+        updateProgress(); // Initial update
     }
 
     // Back to top visibility
@@ -62,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    document.querySelectorAll('.animate-on-scroll, .animate-item').forEach(el => observer.observe(el));
 
     // Add external link indicators
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
