@@ -64,48 +64,47 @@ document.addEventListener('DOMContentLoaded', () => {
         link.setAttribute('rel', 'noopener noreferrer');
     });
 
-    // AI Search
+    // AI Search - uses SEARCH_DATA from search-data.js (all items in site)
     const searchInput = document.getElementById('ai-search-input');
     const searchBtn = document.querySelector('.ai-search-btn');
     const searchResults = document.getElementById('ai-search-results');
     const searchHint = document.getElementById('search-results-hint');
 
-    const allSearchableLinks = Array.from(document.querySelectorAll('a[data-search]'));
+    const searchData = typeof SEARCH_DATA !== 'undefined' ? SEARCH_DATA : [];
 
     function normalizeText(str) {
         return (str || '').toLowerCase().replace(/\s+/g, ' ').trim();
     }
 
-    function searchLinks(query) {
+    function searchItems(query) {
         const q = normalizeText(query);
-        if (!q || q.length < 2) return [];
+        if (!q || q.length < 1) return [];
 
-        const terms = q.split(/\s+/).filter(t => t.length >= 2);
+        const terms = q.split(/\s+/).filter(t => t.length >= 1);
         const results = [];
 
-        allSearchableLinks.forEach(link => {
-            const searchData = link.getAttribute('data-search') || '';
-            const linkText = link.querySelector('.link-text')?.textContent || '';
-            const searchable = normalizeText(searchData + ' ' + linkText);
+        searchData.forEach(item => {
+            const searchable = normalizeText((item.keywords || '') + ' ' + (item.text || ''));
             let score = 0;
 
             terms.forEach(term => {
                 if (searchable.includes(term)) score += 2;
-                if (linkText.toLowerCase().includes(term)) score += 3;
+                if (normalizeText(item.text).includes(term)) score += 4;
             });
 
             if (score > 0) {
-                results.push({ link, score });
+                results.push({ ...item, score });
             }
         });
 
         return results
             .sort((a, b) => b.score - a.score)
-            .map(r => r.link);
+            .map(r => ({ href: r.href, text: r.text, icon: r.icon || '🔗' }));
     }
 
-    function renderResults(matchedLinks) {
-        if (matchedLinks.length === 0) {
+    function renderResults(matched) {
+        if (!searchResults) return;
+        if (matched.length === 0) {
             searchResults.innerHTML = `
                 <div class="ai-search-no-results">
                     <p>לא מצאתי תוצאות. נסה מילים אחרות או <a href="https://notebooklm.google.com/notebook/9696a696-65f0-4db1-91de-d671880ca7b4" target="_blank" rel="noopener noreferrer">שאל את החוברת</a>.</p>
@@ -114,30 +113,29 @@ document.addEventListener('DOMContentLoaded', () => {
             searchResults.classList.remove('has-results');
         } else {
             searchResults.classList.add('has-results');
-            searchResults.innerHTML = matchedLinks.map(link => {
-                const iconEl = link.querySelector('.link-icon, .btn-icon');
-                const icon = iconEl ? iconEl.innerHTML : '🔗';
-                const textEl = link.querySelector('.link-text');
-                const text = textEl ? textEl.textContent : link.textContent.trim();
-                return `<a href="${link.href}" target="_blank" rel="noopener noreferrer" class="ai-search-result-item">
-                    <span class="ai-search-result-icon">${icon}</span>
-                    <span class="ai-search-result-text">${text}</span>
+            searchResults.innerHTML = matched.map(item => {
+                const isExternal = item.href.startsWith('http') && !item.href.includes('nirfit.github.io');
+                const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+                return `<a href="${item.href}"${target} class="ai-search-result-item">
+                    <span class="ai-search-result-icon">${item.icon}</span>
+                    <span class="ai-search-result-text">${item.text}</span>
                 </a>`;
             }).join('');
         }
     }
 
     function runSearch() {
+        if (!searchInput || !searchResults) return;
         const query = searchInput.value.trim();
         if (!query) {
             searchResults.innerHTML = '';
             searchResults.classList.remove('has-results');
-            searchHint.textContent = 'הקלד מילת חיפוש ואמצא לך את הקישורים הרלוונטיים';
+            if (searchHint) searchHint.textContent = 'הקלד מילת חיפוש ואמצא לך את הקישורים הרלוונטיים';
             return;
         }
-        const matched = searchLinks(query);
+        const matched = searchItems(query);
         renderResults(matched);
-        searchHint.textContent = matched.length > 0
+        if (searchHint) searchHint.textContent = matched.length > 0
             ? `מצאתי ${matched.length} תוצאות עבורך`
             : 'לא נמצאו תוצאות – נסה מילים אחרות';
     }
@@ -158,4 +156,44 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) {
         searchBtn.addEventListener('click', runSearch);
     }
+
+    // Background music toggle
+    const musicToggle = document.getElementById('music-toggle');
+    const bgMusic = document.getElementById('bg-music');
+    if (musicToggle && bgMusic) {
+        musicToggle.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(() => {});
+                musicToggle.classList.add('playing');
+            } else {
+                bgMusic.pause();
+                musicToggle.classList.remove('playing');
+            }
+        });
+        bgMusic.addEventListener('play', () => musicToggle.classList.add('playing'));
+        bgMusic.addEventListener('pause', () => musicToggle.classList.remove('playing'));
+    }
+
+    // Parallax effect on hero scroll
+    const heroFull = document.querySelector('.hero-full');
+    if (heroFull) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const heroHeight = heroFull.offsetHeight;
+            if (scrolled < heroHeight) {
+                const opacity = 1 - (scrolled / heroHeight) * 0.3;
+                heroFull.querySelector('.hero-content')?.style.setProperty('opacity', opacity);
+            }
+        });
+    }
+
+    // Subtle scale pulse on stat cards
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-6px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
 });
