@@ -1,15 +1,22 @@
 /**
  * Suzuki Grand Vitara 4x4 Israel Team
- * Website JavaScript
+ * Premium Website - JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 600,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
@@ -28,61 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll progress bar
     const scrollProgress = document.querySelector('.scroll-progress-bar');
-    const scrollProgressContainer = document.querySelector('.scroll-progress');
     if (scrollProgress) {
-        const updateProgress = () => {
+        window.addEventListener('scroll', () => {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const percent = scrollHeight > 0 ? Math.round((scrollTop / scrollHeight) * 100) : 0;
+            const percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
             scrollProgress.style.width = percent + '%';
-            if (scrollProgressContainer) scrollProgressContainer.setAttribute('aria-valuenow', percent);
-        };
-        window.addEventListener('scroll', updateProgress);
-        updateProgress(); // Initial update
+        });
     }
 
     // Back to top visibility
     if (backToTop) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
+            backToTop.classList.toggle('visible', window.scrollY > 400);
         });
     }
 
-    // Animate on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
+    // Header scroll effect - add glass effect when scrolled
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
-    }, observerOptions);
+    }
 
-    document.querySelectorAll('.animate-on-scroll, .animate-item').forEach(el => observer.observe(el));
-
-    // Add external link indicators
+    // External links
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.setAttribute('rel', 'noopener noreferrer');
-    });
-
-    // Lazy load images with fallback
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    img.src = img.dataset.src || img.src;
-                    img.removeAttribute('data-src');
-                }
-            });
-        });
-        obs.observe(img);
     });
 });
